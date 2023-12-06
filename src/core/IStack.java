@@ -4,9 +4,9 @@ public interface IStack {
 	  boolean isEmpty();
 	  int getSize();
 	  boolean isFull();
-	  Object Top ();
+	void push(Integer item);
 	boolean isEmpty1();
 	Integer pop ();
 	Integer peek();
-	void clear ();
+	
 }

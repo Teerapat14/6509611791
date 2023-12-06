@@ -3,41 +3,52 @@ package core;
 import java.util.ArrayList;
 
 public class Stack implements IStack {
-	private ArrayList<Object> elms =new ArrayList<Object>();
-int count = 0 ;
-stack = new Arraylist <>();
+	private ArrayList<Integer> stack;
+	public static final int MAX_SIZE = 2;
 	
-@Override
-public boolean isEmpty1() {
-	// TODO Auto-generated method stub
-	return stack.isEmpty();
+	public Stack() {
+		stack  = new ArrayList<>();
+	}
 
-@Override
-public int  getSize() {
+	@Override
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return stack.isEmpty();
+	}
+
+	@Override
+	public int getSize() {
+		// TODO Auto-generated method stub
+		return stack.size();
+	}
 	
-	return stack.size;
-}
+	@Override
+	public void push(Integer item) {
+		stack.add(item);
+	}
+	
 	@Override
 	public Integer pop() {
-		if (isEmpty()) {
+		if(isEmpty()) {
 			return null;
 		}
+		return stack.remove(stack.size()-1);
+	}
 	
-		
-		@Override
-		public Integer peek() {
-			if (isEmpty()) {
-				return null;
-			}
-		return stack.get(stack.size()-1;
+	@Override
+	public Integer peek() {
+		if(isEmpty()) {
+			return null;
+		}
+		return stack.get(stack.size()-1);
 	}
-		
-		
-		@Override
-		public void push(Integer item) {
-			stack.add(item);
-		
+	
+	@Override
+	public boolean isFull() {
+		return stack.size() == MAX_SIZE;
 	}
+	
+
 
 }
-			
+	
